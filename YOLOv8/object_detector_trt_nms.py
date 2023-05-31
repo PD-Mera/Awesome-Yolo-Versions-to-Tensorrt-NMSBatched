@@ -52,7 +52,7 @@ def load_classes(path):
         names = f.read().split('\n')
     return list(filter(None, names))  # filter removes empty strings (such as last line)
 
-class YOLOR(object):
+class YOLOv8(object):
     def __init__(self, 
             model_weights = 'weights/yolov5-nms-fp16.trt', 
             max_size = 640, 
@@ -113,7 +113,7 @@ class YOLOR(object):
         return visualize_img
 
 if __name__ == '__main__':
-    model = YOLOR("model.trt")
+    model = YOLOv8("model.trt")
     img = cv2.imread('/workspace/Awesome-Yolo-Versions-to-Tensorrt-NMSBatched/YOLOv8/bus.jpg')
     model.detect(img)
 

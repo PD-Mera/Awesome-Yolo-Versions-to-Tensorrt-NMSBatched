@@ -7,7 +7,7 @@ from onnx import shape_inference
 # from models.yolo import ClassificationModel, Detect, DetectionModel, SegmentationModel
 import torch.nn as nn
 
-class YOLOv5AddNMS(nn.Module):
+class YOLOv8AddNMS(nn.Module):
     def __init__(self, model):
         super().__init__()
         self.model = model
@@ -69,7 +69,7 @@ if __name__ == '__main__':
     for _ in range(2):
         y = model(img)  # dry runs
     print('[INFO] Convert from Torch to ONNX')
-    model = YOLOv5AddNMS(model)
+    model = YOLOv8AddNMS(model)
     model.to(device).eval()
 
     torch.onnx.export(model,               # model being run
