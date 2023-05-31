@@ -9,7 +9,7 @@ I'm running with docker `nvcr.io/nvidia/tritonserver:22.12`
 - ONNX 1.14.0
 - Tensorrt 8.5.1.7
 
-## Convert Yolov5 Pytorch to ONNX
+## Convert Yolov8 Pytorch to ONNX
 - Open file ```torch2onnx.py``` and update attribute values to suit your model
 - Run: 
 ```Shell
